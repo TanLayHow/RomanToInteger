@@ -4,6 +4,33 @@
 #include <iostream>
 #include <string>
 using namespace std;
+int romanToInt(string s);
+
+int main()
+{
+    cout << "Test cases" << endl;
+    cout << "MCMXCIV = 1994" << endl;
+    cout << "XVIII = 18" << endl;
+    cout << "MMXXI = 2021" << endl;
+    cout << "---------------" << endl;
+
+    while (true) 
+    {
+        string roman;
+        cout << "Please enter roman numeral (0 to end program) : ";
+        cin >> roman;
+
+        if (roman == "0")
+        {
+            cout << "Bye!\n";
+            break;
+        }
+        else
+        {
+            cout << "Result: " << roman << " : " << romanToInt(roman) << endl;
+        }
+    }
+}
 
 int romanToInt(string s) {
     int total = 0;
@@ -74,20 +101,6 @@ int romanToInt(string s) {
             total += 1000;
 
     return total;
-}
-
-int main()
-{
-    string roman;
-    cout << "Test cases" << endl;
-    cout << "MCMXCIV = 1994" << endl;
-    cout << "XVIII = 18" << endl;
-    cout << "MMXXI = 2021" << endl;
-    cout << "---------------" << endl;
-
-    cout << "Please enter roman numeral: ";
-    cin >> roman;
-    cout << "Result: " << roman << " :" << romanToInt(roman) << endl;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
